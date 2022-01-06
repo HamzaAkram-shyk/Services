@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.services">
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,12 +21,15 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
 
         <service android:name=".MyService" />
         <service android:name=".NewService" />
-        <service android:name="com.example.forgroundservice.ForegroundService"/>
+        <service
+            android:name="com.example.forgroundservice.ForegroundService"
+            />
+
+
     </application>
 
 </manifest>

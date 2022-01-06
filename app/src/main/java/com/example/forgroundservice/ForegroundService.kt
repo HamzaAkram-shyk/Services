@@ -1,4 +1,5 @@
 package com.example.forgroundservice
+
 import android.app.*
 import android.content.Context
 import android.content.Intent
@@ -79,14 +80,14 @@ class ForegroundService : Service() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("Task", "JOb = $job")
-        job?.cancel()
-        job = null
-        //  job=null
-        Log.d("Task", "Service is Killed")
+
+/**     when we cleared the app this callback is invoked*/
+
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        super.onTaskRemoved(rootIntent)
+        stopSelf()
     }
+
 
     private suspend fun performTask() {
         var limit = 25
